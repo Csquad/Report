@@ -1,0 +1,170 @@
+%www.miktex.org
+%\documentclass[a4paper,11pt]{article}
+\documentclass[12pt,a4paper,titlepage]{article}%set letterpaper for letter format
+%\documentclass[12pt]{report}
+%\usepackage{wrapfig}
+%\usepackage{shadow}
+%\usepackage{epsf}
+\usepackage{epsfig}
+\usepackage{multicol}
+\usepackage{color}
+%\usepackage{fancyheadings}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+%\usepackage{pstricks}
+%\usepackage{textpath}
+%\usepackage{pst-text}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{theorem}
+%\usepackage{french}ty
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{pifont}
+\usepackage{bbding}
+\usepackage{wasysym}
+\usepackage{manfnt}
+\usepackage{hyperref}
+\usepackage{glossaries}
+
+% recopie partielle de modele.tex
+\setcounter{secnumdepth}{3}
+\newfont{\manfnt}{manfnt}
+
+\sloppy
+\flushbottom
+
+\parindent 0.8cm
+\leftmargini 2em
+\leftmarginv .5em
+\leftmarginvi .5em
+\marginparwidth 20pt
+\marginparsep 10pt
+\oddsidemargin -0.77cm
+\evensidemargin -0.77cm
+\topmargin       0mm
+\headheight      5mm
+\voffset	-14mm
+\headsep         4mm
+\textheight 24.0cm
+\textwidth  18.0cm
+
+%\setcounter{secnumdepth}{3}
+%\newfont{\manfnt}{manfnt}
+%\setlength{\textwidth}{18.0cm}
+%\setlength{\textheight}{24.0cm}
+%\setlength{\oddsidemargin}{-0.8cm}
+%\setlength{\parindent}{0.8cm}
+%\setlength{\headsep}{0.4cm}
+%\setlength{\headheight}{-1.25cm}
+
+\newcommand{\ima}[2]{\epsfxsize=#1\epsfbox{#2}}
+\makeatletter
+\def\@normalsize{\@setsize\normalsize{12pt}\xpt\@xpt
+\abovedisplayskip 10pt plus2pt minus5pt\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip \z@ plus3pt\belowdisplayshortskip 6pt plus3pt
+minus3pt\let\@listi\@listI}
+\def\subsize{\@setsize\subsize{8pt}\xipt\@xipt}
+\def\section{\@startsection {section}{1}{\z@}{12pt plus 2pt minus 2pt}
+{12pt plus 2pt minus 2pt}{\bf}}
+\def\subsection{\@startsection {subsection}{2}{\z@}{12pt plus 2pt minus 2pt}
+{12pt plus 2pt minus 2pt}{\bf}}
+\makeatother
+\def\thesection       {\Roman{section}.}
+\def\thesubsection    {\thesection\arabic{subsection}.}
+\def\thesubsubsection {\thesubsection\arabic{subsubsection}.}
+\newlength{\mylength}
+\renewcommand{\baselinestretch}{1.1}
+% fin recopie de modele.tex
+\pagestyle{plain}
+
+\setlength{\parindent}{0cm}
+
+\title{\textbf{ Mise en place d'un cluster}}
+\author{ Bardot Jérôme - Couturier Andy \\ Université de Moncton \\ Département d'informatique \\ Info 4025 }
+
+
+\makeglossaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DÉBUT DU DOCUMENT %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%\thispagestyle{empty}
+%\include{page1}
+%\newpage
+
+\pagenumbering{roman}
+
+
+\pagestyle{fancy}
+\pagenumbering{arabic}
+
+\fancyhead[l]{\small \emph{INFO4025}}
+\fancyhead[c]{\small \emph{-- C --}}
+%\fancyhead[r]{\small \emph{Laboratoire n$^{\circ}$ 2}}
+\fancyhead[r]{\small \emph{- Présentation détaillée -}}
+
+\fancyfoot[l]{\small \emph{}}
+\fancyfoot[c]{\it \mancube \quad \thepage-\pageref{lastpage} \quad \mancube}
+\fancyfoot[r]{\small \emph{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle 
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+\printglossaries
+
+\section{\large Introduction}
+\subsection{Les Machines Distribuées}
+\subsection{Étude de cas concrets}
+\section{\large Architecture et Organisation physique}
+\section{\large Aspects Logiciel et Exploitation du parallélisme}
+\section{\large Conclusion, tendance actuelle et future.}
+
+
+\newpage
+
+L'objectif du projet est de réaliser un \emph{CMS} \footnote{Content Management System} permettant à une communauté d'exister et de communiquer.
+
+
+
+-  \href{http://book.cakephp.org/2.0/fr/index.html}{cakephp} \\
+- \href{http://getbootstrap.com/}{bootstrap} \\
+
+
+people don‚t know about
+alternative \gls{computer} operating systems:
+\glspl{Linux}, BSDs and GNU/Hurd.
+
+
+
+\newglossaryentry{computer}
+{
+name=computer,
+description={is a programmable machine that receives input,
+stores and manipulates data, and provides
+output in a useful format}
+}
+
+\newglossaryentry{Linux}
+{
+description={is a generic term referring to the family of Unix-like
+computer operating systems that use the Linux kernel}
+}
+
+\printglossary
+
+
+\label{lastpage}
+
+\end{document}
